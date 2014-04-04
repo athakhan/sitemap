@@ -22,7 +22,7 @@
 
       var diameter = 4000,
           tree = d3.layout.tree()
-            .size([360, diameter / 2 - 50])
+            .size([360, diameter / 2 - 120])
             .separation(function(a, b) { return (a.parent == b.parent ? 2 : 2) / a.depth; }),
           diagonal = d3.svg.diagonal.radial()
             .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; }),
@@ -57,7 +57,7 @@
             .attr("dy", ".31em")
             .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
             .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
-            .text(function(d) { return d.name; });
+            .text(function(d) { return d.title; });
 
           var legend = svg.append("g")
             .attr("class", "legend")
