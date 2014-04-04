@@ -23,7 +23,7 @@
       var diameter = 4000,
           tree = d3.layout.tree()
             .size([360, diameter / 2 - 120])
-            .separation(function(a, b) { return (a.parent == b.parent ? 2 : 2) / a.depth; }),
+            .separation(function(a, b) { return (a.parent == b.parent ? 3 : 5) / a.depth; }),
           diagonal = d3.svg.diagonal.radial()
             .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; }),
           svg = d3.select("#chart")
